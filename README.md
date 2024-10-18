@@ -5,3 +5,5 @@ Hello. Im me.
 I like coding (obviously this is github) and gaming, and I can't think of anything else to say. 
 <br>
 hmm
+<br>
+uh idk ill finish this later... maybe
