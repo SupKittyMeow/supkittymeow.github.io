@@ -20,7 +20,8 @@
   let stupidUp = true;
 
   function stupid(timestamp) {
-    document.getElementById("stupid").ariaSetSize(stupidVar);  
+    stupidElement = document.getElementById("stupid")
+    stupidElement.style.transform = `scale(${stupidVar / 100})`;
     requestAnimationFrame("stupid");
     if (stupidUp)
     {
