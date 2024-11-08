@@ -8,8 +8,29 @@
   <meta name="google-site-verification" content="8iu7X0pOJ43DwqF21sr9aUkVcpkHh4LiJZVYONibiTQ" />
 </head>
 
-<body>
-SupKittyMeow's Website!
+<body class="stupid">
+this website is sooooooo good isnt it
 <a href="/About/"><button>About</button></a>
-<a href="/Tree/"><button>Link Tree</button></a>
 </body>
+
+<script>
+  window.requestAnimationFrame("stupid");
+
+  let stupid = 100;
+  let stupidUp = true;
+
+  function stupid() {
+    document.getElementsByClassName("stupid").resizeTo(100, 100);  
+    window.requestAnimationFrame("stupid");
+    if (stupidUp)
+    {
+      stupid++;
+      if(stupid >= 200) stupidUp = false;
+    }
+    else
+    {
+      stupid--;
+      if(stupid <= 100) stupidUp = true;
+    }
+  }
+</script>
