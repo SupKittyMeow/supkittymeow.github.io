@@ -14,22 +14,22 @@
 </body>
 
 <script>
-  window.requestAnimationFrame("stupid");
+  requestAnimationFrame("stupid");
 
   let stupidVar = 100;
   let stupidUp = true;
 
-  function stupid() {
+  function stupid(timestamp) {
     document.getElementById("stupid").resizeTo(stupidVar, stupidVar);  
-    window.requestAnimationFrame("stupid");
+    requestAnimationFrame("stupid");
     if (stupidUp)
     {
-      stupidVar++;
+      stupidVar+=timestamp;
       if(stupidVar >= 200) stupidUp = false;
     }
     else
     {
-      stupidVar--;
+      stupidVar-=timestamp;
       if(stupidVar <= 100) stupidUp = true;
     }
   }
