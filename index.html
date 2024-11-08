@@ -8,9 +8,9 @@
   <meta name="google-site-verification" content="8iu7X0pOJ43DwqF21sr9aUkVcpkHh4LiJZVYONibiTQ" />
 </head>
 
-<body class="stupid">
-this website is sooooooo good isnt it
-<a href="/About/"><button>About</button></a>
+<body>
+  <div id="stupid">this website is sooooooo good isnt it</div>
+  <a href="/About/"><button>About</button></a>
 </body>
 
 <script>
@@ -20,7 +20,7 @@ this website is sooooooo good isnt it
   let stupidUp = true;
 
   function stupid() {
-    document.getElementsByClassName("stupid").resizeTo(100, 100);  
+    document.getElementById("stupid").resizeTo(100, 100);  
     window.requestAnimationFrame("stupid");
     if (stupidUp)
     {
