@@ -16,21 +16,21 @@
 <script>
   window.requestAnimationFrame("stupid");
 
-  let stupid = 100;
+  let stupidVar = 100;
   let stupidUp = true;
 
   function stupid() {
-    document.getElementById("stupid").resizeTo(stupid, stupid);  
+    document.getElementById("stupid").resizeTo(stupidVar, stupidVar);  
     window.requestAnimationFrame("stupid");
     if (stupidUp)
     {
-      stupid++;
-      if(stupid >= 200) stupidUp = false;
+      stupidVar++;
+      if(stupidVar >= 200) stupidUp = false;
     }
     else
     {
-      stupid--;
-      if(stupid <= 100) stupidUp = true;
+      stupidVar--;
+      if(stupidVar <= 100) stupidUp = true;
     }
   }
 </script>
