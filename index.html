@@ -12,27 +12,3 @@
   <div id="stupid">this website is sooooooo good isnt it</div>
   <a href="/About/"><button>About</button></a>
 </body>
-
-<script>
-  requestAnimationFrame(stupid);
-
-  let stupidVar = 100;
-  let stupidUp = true;
-
-  function stupid(timestamp) {
-    stupidElement = document.getElementById("stupid")
-    stupidElement.style.transform = `scale(${stupidVar / 100})`;
-    stupidElement.style.transform = 'translate(0, 0)';
-    requestAnimationFrame(stupid);
-    if (stupidUp)
-    {
-      stupidVar+=timestamp;
-      if(stupidVar >= 100) stupidUp = false;
-    }
-    else
-    {
-      stupidVar-=timestamp;
-      if(stupidVar <= -100) stupidUp = true;
-    }
-  }
-</script>
