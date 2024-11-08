@@ -22,16 +22,17 @@
   function stupid(timestamp) {
     stupidElement = document.getElementById("stupid")
     stupidElement.style.transform = `scale(${stupidVar / 100})`;
+    stupidElement.style.transform = 'translate(0, 0)';
     requestAnimationFrame(stupid);
     if (stupidUp)
     {
       stupidVar+=timestamp;
-      if(stupidVar >= 200) stupidUp = false;
+      if(stupidVar >= 100) stupidUp = false;
     }
     else
     {
       stupidVar-=timestamp;
-      if(stupidVar <= 100) stupidUp = true;
+      if(stupidVar <= -100) stupidUp = true;
     }
   }
 </script>
