@@ -112,10 +112,21 @@
 </body>
 
 <script>
+  window.requestAnimationFrame(step);
+
+  function step() {
+    document.getElementById("button").ondragstart = function () {
+      return false;
+    };
+    };
+
+    window.requestAnimationFrame(step);
+  }
+
   let mouseDown = false;
 
   let pointsText = document.getElementById("points");
-  let buttonImage = document.getElementById("button")Z
+  let buttonImage = document.getElementById("button");
 
   let notClicked =
     "https://cdn.glitch.global/feac0236-fb39-4a57-a3e5-1a988e2a38e6/Not%20Clicked.png?v=1716070731664";
@@ -149,7 +160,7 @@
     pointsText.innerHTML = localStorage.getItem("Points");
     document.title = localStorage.getItem("Points") + " - CFP";
   };
-
+  
   function Click() {
     mouseDown = true;
     buttonImage.src = clicked;
