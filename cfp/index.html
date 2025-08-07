@@ -117,10 +117,10 @@
   function step() {
     document.getElementById("button").ondragstart = function () {
       return false;
-    };
 
     window.requestAnimationFrame(step);
-
+  };
+    
   let mouseDown = false;
 
   let pointsText = document.getElementById("points");
