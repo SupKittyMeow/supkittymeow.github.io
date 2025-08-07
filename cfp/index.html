@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<head>
+  <title>0 - CFP</title>
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="https://cdn.glitch.global/feac0236-fb39-4a57-a3e5-1a988e2a38e6/Not%20Clicked.png?v=1716070731664"
+  />
+  <link
+    href="http://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+    type="text/css"
+  />
+</head>
+
+<style>
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  h2 {
+    position: absolute;
+    top: -1%;
+    left: -43.7%;
+    width: 100%;
+    outline: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 5vw;
+    color: white;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  }
+
+  .button {
+    outline: none;
+    border: none;
+    width: 25%;
+    height: width;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
+    image-rendering: optimizeSpeed; /* STOP SMOOTHING, GIVE ME SPEED  */
+    image-rendering: -moz-crisp-edges; /* Firefox                        */
+    image-rendering: -o-crisp-edges; /* Opera                          */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+    image-rendering: pixelated; /* Universal support since 2021   */
+    image-rendering: optimize-contrast; /* CSS3 Proposed                  */
+    -ms-interpolation-mode: nearest-neighbor; /* IE8+   */
+  }
+
+  .points {
+    outline: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 10vw;
+    color: white;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  }
+</style>
+
+<body>
+  <div
+    style="text-align: center"
+    ontouchstart="Click()"
+    onmousedown="Click()"
+    tabindex="-1"
+  >
+    <img
+      class="button"
+      id="button"
+      src="https://cdn.glitch.global/feac0236-fb39-4a57-a3e5-1a988e2a38e6/Not%20Clicked.png?v=1716070731664"
+      alt=""
+      tabindex="-1"
+    />
+    <div class="points" id="points" tabindex="-1">0</div>
+  </div>
+</body>
+
+<script>
+  let mouseDown = false;
+
+  let pointsText = document.getElementById("points");
+  let buttonImage = document.getElementById("button")Z
+
+  let notClicked =
+    "https://cdn.glitch.global/feac0236-fb39-4a57-a3e5-1a988e2a38e6/Not%20Clicked.png?v=1716070731664";
+  let clicked =
+    "https://cdn.glitch.global/feac0236-fb39-4a57-a3e5-1a988e2a38e6/Clicked.png?v=1716070724808";
+
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  
+  document.addEventListener("keydown", (event) => {
+    if (event.code === "Space") {
+      SpaceClick();
+    }
+  });
+
+  document.addEventListener("keyup", (event) => {
+    if (event.code === "Space") {
+      GivePoints();
+    }
+  });
+
+  window.addEventListener("mouseup", (event) => {
+    UnClick();
+  });
+
+  window.onload = function () {
+    document.body.style.background = "#00ffff";
+    if (localStorage.getItem("Points") == null) {
+      localStorage.setItem("Points", 0);
+    }
+
+    pointsText.innerHTML = localStorage.getItem("Points");
+    document.title = localStorage.getItem("Points") + " - CFP";
+  };
+
+  function Click() {
+    mouseDown = true;
+    buttonImage.src = clicked;
+  }
+
+  function SpaceClick() {
+    buttonImage.src = clicked;
+  }
+
+  function UnClick() {
+    if (mouseDown) {
+      mouseDown = false;
+      GivePoints();
+    }
+  }
+
+  function GivePoints() {
+    points = parseFloat(localStorage.getItem("Points"));
+    localStorage.setItem("Points", (points = points + 1));
+    points = parseFloat(localStorage.getItem("Points"));
+    pointsText.innerHTML = points;
+
+    let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    document.body.style.background = randomColor;
+    document.title = points + " - CFP";
+    if (!mouseDown) buttonImage.src = notClicked;
+  }
+</script>
