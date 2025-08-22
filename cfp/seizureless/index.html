@@ -108,6 +108,8 @@
       let pts = parseFloat(localStorage.getItem("Points")) || 0;
       localStorage.setItem("Points", pts + 1);
       updateDisplay();
+
+      buttonImage.src = notClicked;
     }
 
     function updateDisplay() {
