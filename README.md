@@ -2,7 +2,7 @@
 
 Hello. Im me.
 <br>
-I like coding (obviously this is github) and gaming, and I can't think of anything else to say. 
+I like coding (obviously; this is github after all) and gaming, and I can't think of anything else to say. 
 <br>
 hmm
 <br>
